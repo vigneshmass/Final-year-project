@@ -1,0 +1,352 @@
+ /****************** SWAP THE  No ******************************************************/
+
+import java.util.Scanner;
+
+public class Use 
+{
+	public static void main(String []arg){
+	
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter the No elements");
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		System.out.println(" a value is"+a);
+		System.out.println(" b value is"+b);
+		/*  using temp  method
+		 //int temp=0;
+		//temp=a;
+		//a=b;
+		//b=temp;*/
+		a=a+b;
+		b=a-b;
+		a=a-b;
+		System.out.println(" after a value is"+a);
+		System.out.println("after b12 value is"+b);
+		
+		
+}
+	} 
+/********************************************************** MAX VALUE IN THE GIVEN ARRAY*******************************/
+import java.util.Scanner;
+
+public class Use 
+{
+	public static void main(String []arg){
+	
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter the No elements");
+		int n = sc.nextInt();
+		System.out.println("Enter all elements");
+		int a[]=new int[n];
+		for(int i=0;i<n;i++)
+		{ a[i]=sc.nextInt();
+		}
+		int  max=max_num(a,n); 
+		
+		System.out.println(" max values is"+max);
+		  }
+		 static int max_num( int []a,int n) {
+			 int i;
+			 int  m=0;
+			 for(i=0;i<n;i++)
+			 {
+				if(a[i]>m) {
+					m=a[i];
+				} 
+			 } return m;		
+}
+	}
+/**************************************PRIME NO OR NOT*************************************************/
+import java.util.Scanner;
+
+public class Use 
+{
+	public static void main(String []arg){
+	//int a=1000,b=50,c=24;
+		Scanner sc =new Scanner(System.in);
+		int n = sc.nextInt();
+		//int fact= n;
+		int count=0;
+		for(int i=1;i<=n;i++) {
+			if(n%i==0) {
+				count++;
+				
+				
+			}}
+			if(count==2)
+			{
+				System.out.println(n+"  prime");
+			}
+			else {System.out.println(n+"  not prime");}
+		}
+			
+}
+/***************************************FIBONACCI SERIES**************************************************/
+import java.util.Scanner;
+
+public class Use 
+{
+	public static void main(String []arg){
+	
+		Scanner sc =new Scanner(System.in);
+		int n = sc.nextInt();
+		/*     //int n=20;
+		long a[]=new long[n];
+		 a[0]=0;
+		 a[1]=1;
+		 for(int i=2; i<n ;i++)
+		 {
+			a[i]=a[i-2]+a[i-1];
+			
+		 }
+		 for(int i=0; i<n ;i++) {
+			 System.out.println(a[i]);
+		 }
+		*/
+		 int x=0;
+		 int y=1;
+		 int fib=0;
+		 System.out.println(x);
+		 System.out.println(y);
+		while(n>0)
+		{ 
+			
+			fib=x+y;
+			x=y;
+			y=fib;
+			n--;
+			System.out.println(fib);
+		}	
+		
+			
+}
+	}
+/******************************************PALINDROME using NUMBERS***************************************************/
+import java.util.Scanner;
+
+public class Use 
+{
+	public static void main(String []arg){
+	   int rem=0;
+	   int temp=0;
+		Scanner sc =new Scanner(System.in);
+		int n = sc.nextInt();
+		int x=n;
+		while(n>0) {
+			
+			 temp=n%10;
+			 n=n/10;
+			 rem=rem*10+temp;
+			 
+			
+			// System.out.println(rem);
+			
+		}
+		 //System.out.println(rem);
+		 //System.out.println(n);
+		if(rem == x)
+		{
+		    System.out.print("Paralemdrom");
+		}else
+		{
+			System.out.println("Not Paralendrom");
+		}
+			
+		
+			
+}
+	}
+   ****************************************************PALINDROM USING STRING*************************************
+
+import java.util.Scanner;
+
+public class Use 
+{
+	public static void main(String []arg){
+	   int rem=0;
+	   int temp=0;
+		Scanner sc =new Scanner(System.in);
+		String n=sc.nextLine();
+		StringBuffer sb =new StringBuffer(n);
+		String b=sb.reverse().toString();
+		 
+		System.out.println(b);
+		System.out.println(n);
+		if(n.contentEquals(b))  // n == b
+		{
+			System.out.println("Palindrom");
+		}
+		else {
+			System.out.println(" not Palindrom");
+		}
+		
+	
+		
+			
+}
+	}
+/************************************LEAP YEAR***************************************************************/
+	import java.util.Scanner;
+
+public class Use 
+{
+	public static void main(String []arg){
+	 
+		Scanner sc =new Scanner(System.in);
+		int YR=sc.nextInt();
+		if((YR%400==0  || YR%4==0) && (YR%100 !=0)) {
+			System.out.println("Leap yr");
+		}else {
+			System.out.println("NOT A LEAP YR");
+		}
+		
+}
+	}
+/*********************************AMSTANG NO*****************************************************************/
+import java.util.Scanner;
+
+public class Use 
+{
+	public static void main(String []arg){
+	 
+	Scanner sc =new Scanner(System.in);
+	int n=sc.nextInt();
+	int a=n;
+		     int temp=0;
+			 int check=0;
+		 while(n>0) {
+	    temp=n%10;
+	    check=check+(int)Math.pow(temp,3);
+	    n=n/10;
+		
+	}System.out.println( a+"=="+check  );
+	if(a == check)
+	{
+		System.out.print("AMSTRANG NO") ;
+	}
+	else {
+		System.out.println( "NOT A AMSTRANG NO");
+	}
+		
+		 }} 
+/*****************************************SWITCH USING NO *************************************************/
+import java.util.Scanner;
+
+public class Use 
+{
+	public static void main(String []arg){
+	 
+	Scanner sc =new Scanner(System.in);
+	int n=sc.nextInt();
+	int temp=0;
+	int rev=0;
+	 while(n>0) {
+		 temp=n%10;
+		 rev=rev*10+temp;
+		 n=n/10;
+	 }
+	 while(rev>0) {
+		 temp=rev%10; 
+		// System.out.println(temp);
+		 
+		 rev=rev/10;
+		 
+	 
+	// System.out.print(temp);
+	 switch(temp) {
+	 case 0:
+		 System.out.print("  ZERO");
+		 break;
+	 case 1:
+		 System.out.print("  ONE");
+		 break;
+	 case 2:
+		 System.out.print("  TWO");
+		 break;
+	 case 3:
+		 System.out.print("  THREE");
+		 break;
+	 case 4:
+		 System.out.print("  FOUR");
+		 break;
+	 case 5:
+		 System.out.print("  Five");
+		 break;
+	 case 6:
+		 System.out.print("  six");
+		 break;
+	 case 7:
+		 System.out.print(" SEVEN");
+		 break;
+	 case 8:
+			 System.out.print("  EIGHT");
+			 break;
+	 case 9:
+		 System.out.print(" NINE");
+		 break;
+	
+//	System.out.println(a);
+
+//	System.out.println(a);
+		 }} }}
+/****************************************************SPY NO****************************************************/
+import java.util.Scanner;
+
+public class Use 
+{
+	public static void main(String []arg){
+	 
+	Scanner sc =new Scanner(System.in);
+	int n=sc.nextInt();
+	int temp=0;
+	int pro=1;
+	int sum=0;
+	int a=1;
+	 while(n>0) {
+		 temp=n%10;
+		  sum=sum+temp;
+		 pro=pro*temp;
+		 n=n/10;
+		 
+		
+	 }
+	 if(sum == pro) {
+		 System.out.println("Spy no");
+	 }
+	 else {
+		 System.out.println("not a Spy No");
+	 }
+	
+	
+	 } }
+/************************************* LCM   *******************************************************************/
+import java.util.Scanner;
+
+public class Use 
+{
+	public static void main(String []arg){
+	 
+	Scanner sc =new Scanner(System.in);
+  int Big;
+  int Small;
+	int n1=sc.nextInt();
+	int n2=sc.nextInt();
+
+	if(n1>n2) {
+		Big=n1;
+		Small=n2;
+	}else {
+		Big=n2;
+		Small=n2;
+	}
+	for(int i=1;i<=Big;i++) {
+		  if((( Big*i) % Small )== 0) {
+			int Lcm=Big*i;
+			System.out.print((Lcm));
+			break;
+		}
+		  
+	}
+	
+	
+	 } }
