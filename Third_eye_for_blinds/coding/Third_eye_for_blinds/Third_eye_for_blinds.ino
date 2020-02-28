@@ -1,10 +1,8 @@
-
-
   const int pingTrigPin = 12;    
   const int pingEchoPin = 10; 
-  int buz=5; 
+  int buz=13; 
   void setup() 
-  {   
+  {    
   Serial.begin(9600);   
   pinMode(buz, OUTPUT);   
   }   
@@ -12,7 +10,7 @@
   {   
   long duration, cm;   
   pinMode(pingTrigPin, OUTPUT);   
-  digitalWrite(pingTrigPin, LOW);   
+  digitalWrite(pingTrigPin, LOW);
   delayMicroseconds(2);   
   digitalWrite(pingTrigPin, HIGH);   
   delayMicroseconds(5);   
@@ -23,13 +21,22 @@
   if(cm<=50 && cm>0)   
   {   
   int d= map(cm, 1, 100, 20, 2000);   
-  digitalWrite(buz, HIGH);   
+  digitalWrite(buz, HIGH); 
+     
   delay(100);   
-  digitalWrite(buz, LOW);   
+  digitalWrite(buz, LOW);  
+ 
   delay(d);  
   }   
-  Serial.print(cm);    
-  Serial.print("cm");   
+  if(cm>50){
+  Serial.print(cm); 
+  Serial.print(" cm"); 
+  Serial.print(" --->OFF"); 
+  }else{
+    Serial.print(cm); 
+  Serial.print(" cm");  
+  Serial.print(" --->ON");  
+  }
   Serial.println();   
   delay(100);   
   }   
