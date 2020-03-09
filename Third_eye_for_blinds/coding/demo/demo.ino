@@ -1,14 +1,14 @@
   //LEFT US 
   const int pingTrigPin = 2;    
   const int pingEchoPin = 3; 
-  int buz=8; 
+  int buz=4; 
   //RIGHT US 
-  const int pingTrigPin1 = 4;    
-  const int pingEchoPin1 = 5; 
-  int buz1=9;
+  const int pingTrigPin1 = 5;    
+  const int pingEchoPin1 = 6; 
+  int buz1=7;
   // MID US
-  const int pingTrigPin2 = 6;    
-  const int pingEchoPin2 = 7; 
+  const int pingTrigPin2 = 8;    
+  const int pingEchoPin2 = 9; 
   int buz2=10;
   //PIR
   
@@ -29,7 +29,24 @@ int val = 0;
   }   
   void loop()   
   {   
-  long duration, cm;   
+ // Declare the functions
+   LeftUs();
+   RightUs();
+   MidUs();
+   PIRSensor();
+
+   
+  }   
+  long microsecondsToCentimeters(long microseconds)   
+  {   
+  return microseconds / 29 / 2;   
+  
+  }   
+
+//------------------------------------------- Define the functioons-------------------------------
+  void LeftUs(){
+    //Left Ultrasonic Sensor
+    long duration, cm;   
   pinMode(pingTrigPin, OUTPUT);   
   digitalWrite(pingTrigPin, LOW);
   delayMicroseconds(2);   
@@ -48,14 +65,16 @@ int val = 0;
   digitalWrite(buz, LOW);  
  
   delay(d);  
-  }   
+  }
+  if(cm < 50){
+      Serial.print(cm );
+      Serial.print(" cm -- LEFT US ON..."); 
+      Serial.println();   }   
 
-  Serial.print(cm); 
-  Serial.print(" cm -- LEFT"); 
-  Serial.println();   
-   
- 
-  // US 2
+    }
+ //-----------------------------------------------------------------   
+void RightUs(){
+   // Right Ultrasonic Sensor
    long duration1, cm1;   
   pinMode(pingTrigPin1, OUTPUT);   
   digitalWrite(pingTrigPin1, LOW);
@@ -75,13 +94,15 @@ int val = 0;
   digitalWrite(buz1, LOW);  
  
   delay(d1);  
-  }   
-
-  Serial.print(cm1); 
-  Serial.print(" cm -- RIGHT"); 
-  Serial.println(); 
-  
-// US 3
+  }  
+   if(cm1 < 50){
+      Serial.print(cm1 );
+      Serial.print(" cm -- RIGHT US ON..."); 
+      Serial.println();   }  
+  }    
+  //----------------------------------------------------------------
+  void MidUs(){
+    // Midle Ultrasonicsensor
   long duration2, cm2;   
   pinMode(pingTrigPin2, OUTPUT);   
   digitalWrite(pingTrigPin2, LOW);
@@ -102,30 +123,30 @@ int val = 0;
  
   delay(d2);  
   }   
+   if(cm2 < 50){
+      Serial.print(cm2 );
+      Serial.print(" cm -- MID US ON..."); 
+      Serial.println();   }   
+    
+    }  
 
-  Serial.print(cm2); 
-  Serial.print(" cm -- MID"); 
-  Serial.println();   
- 
-  //PIR 
- val = digitalRead(inputPin); 
+//-------------------------------------------------------------------------------
+void PIRSensor(){
+  // Passive Infrared Sensor
+  val = digitalRead(inputPin); 
 if (val == HIGH) {
 digitalWrite(ledPin, HIGH); 
 if (pirState == LOW) {
-Serial.println("Motion detected!");
+Serial.println("Motion detected!...");
 pirState = HIGH;
 }
 } else {
 digitalWrite(ledPin, LOW);
 if (pirState == HIGH){
-Serial.println("Motion ended!");
+Serial.println("Motion ended!...");
 pirState = LOW;
 }
 }
-   
-  }   
-  long microsecondsToCentimeters(long microseconds)   
-  {   
-  return microseconds / 29 / 2;   
+
   
-  }   
+  }    
