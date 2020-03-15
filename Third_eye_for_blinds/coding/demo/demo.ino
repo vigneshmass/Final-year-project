@@ -1,17 +1,23 @@
+ 
   //LEFT US 
   const int pingTrigPin = 2;    
   const int pingEchoPin = 3; 
-  int buz=4; 
+  int buz=4;
+
+   
   //RIGHT US 
   const int pingTrigPin1 = 5;    
   const int pingEchoPin1 = 6; 
   int buz1=7;
+
+  
   // MID US
   const int pingTrigPin2 = 8;    
   const int pingEchoPin2 = 9; 
   int buz2=10;
-  //PIR
+
   
+  //PIR 
 int ledPin =13 ; 
 int inputPin = 11; 
 int pirState = LOW; 
@@ -28,7 +34,8 @@ int val = 0;
   
   }   
   void loop()   
-  {   
+  {
+       
  // Declare the functions
    LeftUs();
    RightUs();
@@ -44,8 +51,11 @@ int val = 0;
   }   
 
 //------------------------------------------- Define the functioons-------------------------------
+ 
+  
+                                     //Left Ultrasonic Sensor
   void LeftUs(){
-    //Left Ultrasonic Sensor
+   
     long duration, cm;   
   pinMode(pingTrigPin, OUTPUT);   
   digitalWrite(pingTrigPin, LOW);
@@ -73,8 +83,11 @@ int val = 0;
 
     }
  //-----------------------------------------------------------------   
+                                     // Right Ultrasonic Sensor
+
+  
 void RightUs(){
-   // Right Ultrasonic Sensor
+  
    long duration1, cm1;   
   pinMode(pingTrigPin1, OUTPUT);   
   digitalWrite(pingTrigPin1, LOW);
@@ -101,8 +114,9 @@ void RightUs(){
       Serial.println();   }  
   }    
   //----------------------------------------------------------------
+                         // Midle Ultrasonicsensor
   void MidUs(){
-    // Midle Ultrasonicsensor
+   
   long duration2, cm2;   
   pinMode(pingTrigPin2, OUTPUT);   
   digitalWrite(pingTrigPin2, LOW);
@@ -131,8 +145,9 @@ void RightUs(){
     }  
 
 //-------------------------------------------------------------------------------
+                           // Passive Infrared Sensor
 void PIRSensor(){
-  // Passive Infrared Sensor
+ 
   val = digitalRead(inputPin); 
 if (val == HIGH) {
 digitalWrite(ledPin, HIGH); 
