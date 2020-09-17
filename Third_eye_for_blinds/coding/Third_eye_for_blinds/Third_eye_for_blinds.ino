@@ -1,5 +1,5 @@
   const int pingTrigPin = 12;    
-  const int pingEchoPin = 10; 
+  const int pingEchoPin = 9; 
   int buz=13; 
   void setup() 
   {    

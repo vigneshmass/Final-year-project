@@ -31,8 +31,8 @@ void loop()
           Serial.println("Calling through GSM Modem");
           mySerial.begin(9600);//setting baudrate at 9600;
           delay(1000);
-          mySerial.println("ATD7896xxxxxx;"); // ATDxxxxxxxxxx; semicolon should be at the last ;AT command that follows UART protocol;
-          Serial.println("Called ATD7896xxxxxx");
+          mySerial.println("ATD8523916603;"); // ATDxxxxxxxxxx; semicolon should be at the last ;AT command that follows UART protocol;
+          Serial.println("Called ATD8523916603");
           delay(1000);
           if (mySerial.available())
           Serial.write(mySerial.read());
